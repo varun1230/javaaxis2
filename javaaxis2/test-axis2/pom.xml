@@ -1,0 +1,158 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+		<groupId>org.vstech</groupId>
+		<artifactId>javaaxis2</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+  <groupId>org.vstech.test</groupId>
+  <artifactId>test-axis2</artifactId>
+  <packaging>war</packaging>
+  <name>test-axis2</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+		<axis.version>1.7.8</axis.version>
+		<rampart.version>1.7.1</rampart.version>
+		<jstl.version>1.1.2</jstl.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<maven.build.timestamp.format>MM/dd/yyyy</maven.build.timestamp.format>
+		<release.date>${maven.build.timestamp}</release.date>
+	</properties>
+	<dependencies>
+		<!-- axis2 dependencies -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-webapp</artifactId>
+			<version>${axis.version}</version>
+			<type>war</type>
+		</dependency>
+
+		<!-- rampart dependencies -->
+		<dependency>
+			<groupId>org.apache.rampart</groupId>
+			<artifactId>rampart-core</artifactId>
+			<version>${rampart.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.bouncycastle</groupId>
+					<artifactId>bcprov-jdk15</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.axis2</groupId>
+					<artifactId>axis2-kernel</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.axis2</groupId>
+					<artifactId>axis2-mtompolicy</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.axis2</groupId>
+					<artifactId>mex</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>
+						geronimo-activation_1.1_spec
+					</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-stax-api_1.0_spec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.rampart</groupId>
+			<artifactId>rampart</artifactId>
+			<version>${rampart.version}</version>
+			<type>mar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.rampart</groupId>
+			<artifactId>rahas</artifactId>
+			<version>${rampart.version}</version>
+			<type>mar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${jstl.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	
+		<!-- logging dependencies -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+	</dependencies> 
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<packagingExcludes>
+						WEB-INF/classes/log4j.properties,
+						WEB-INF/lib/activation-1.1.jar,
+						WEB-INF/lib/commons-codec-1.2.jar,
+						WEB-INF/lib/commons-logging-1.1.1.jar,
+						WEB-INF/lib/commons-logging-1.1.1.jar,
+						WEB-INF/lib/log4j-1.2.15.jar,
+						WEB-INF/lib/mail-1.4.jar,
+						WEB-INF/lib/taglibs-standard-impl-1.2.5.jar,
+						WEB-INF/lib/taglibs-standard-spec-1.2.5.jar,
+						WEB-INF/lib/xalan-2.7.0.jar,
+						WEB-INF/lib/*.txt
+					</packagingExcludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project> 
+
