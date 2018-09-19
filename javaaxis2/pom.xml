@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
 	
 	<modules>
+		<module>webservice-axis2</module>
 		<module>test-axis2</module>
 	</modules>
 	

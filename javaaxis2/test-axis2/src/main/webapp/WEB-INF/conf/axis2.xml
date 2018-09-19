@@ -28,7 +28,8 @@
 
 
     <parameter name="EnableChildFirstClassLoading">true</parameter>
-
+	<parameter name="disableAdminSecurity">true</parameter>
+	
     <!--Uncomment if you want to enable file caching for attachments -->
     <!--parameter name="cacheAttachments">true</parameter>
     <parameter name="attachmentDIR"></parameter>

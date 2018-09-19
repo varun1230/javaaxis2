@@ -113,7 +113,14 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>org.vstech.test</groupId>
+			<artifactId>webservice-axis2</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>aar</type>
+		</dependency>
+		
 	</dependencies> 
 	<build>
 		<resources>
