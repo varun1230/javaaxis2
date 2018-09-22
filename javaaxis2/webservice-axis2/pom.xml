@@ -19,23 +19,60 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <axis.version>1.7.8</axis.version>
     <slf4j.version>1.7.25</slf4j.version>
+  	<spring.version>4.3.18.RELEASE</spring.version>
   </properties>
 
   <dependencies>
   
   	<!-- Axis2 -->
-  	
+  	<dependency>
+	    <groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-kernel</artifactId>
+    	<version>${axis.version}</version>
+    	<scope>provided</scope>
+  	</dependency>
   	<dependency>
 	    <groupId>org.apache.axis2</groupId>
     	<artifactId>axis2-adb</artifactId>
     	<version>${axis.version}</version>
     	<scope>provided</scope>
-	</dependency>
+    	<exclusions>
+    		<exclusion>
+    			<artifactId>servlet-api</artifactId>
+    			<groupId>javax.servlet</groupId>
+    		</exclusion>
+    	</exclusions>
+  	</dependency>
   
   	<dependency>
 		<groupId>org.apache.axis2</groupId>
 		<artifactId>axis2-spring</artifactId>
 		<version>${axis.version}</version>
+	</dependency>
+	
+	<!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
 	</dependency>
 	
   	<!-- logging dependencies -->
@@ -48,6 +85,13 @@
 		<groupId>org.slf4j</groupId>
 		<artifactId>jcl-over-slf4j</artifactId>
 		<version>${slf4j.version}</version>
+	</dependency>
+  	
+  	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
 	</dependency>
   	
     <dependency>

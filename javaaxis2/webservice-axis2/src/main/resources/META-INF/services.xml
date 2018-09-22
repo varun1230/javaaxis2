@@ -10,7 +10,7 @@
     <parameter name="ServiceTCCL">composite</parameter>
     <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
     <parameter name="SpringBeanName">springAwareService</parameter>
-    <operation name="addNumbers" mep="" namespace = "">
+    <operation name="addNumbers">
         <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
     </operation>
   </service>

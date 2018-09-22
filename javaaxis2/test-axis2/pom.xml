@@ -18,6 +18,7 @@
 		<rampart.version>1.7.1</rampart.version>
 		<jstl.version>1.1.2</jstl.version>
 		<slf4j.version>1.7.25</slf4j.version>
+		<spring.version>4.3.18.RELEASE</spring.version>
 		<maven.build.timestamp.format>MM/dd/yyyy</maven.build.timestamp.format>
 		<release.date>${maven.build.timestamp}</release.date>
 	</properties>
@@ -82,6 +83,19 @@
 		</dependency>
 
 		<dependency>
+		    <groupId>org.apache.ws.security</groupId>
+		    <artifactId>wss4j</artifactId>
+		    <version>1.6.18</version>
+		</dependency>
+
+		<!-- Spring Version -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
@@ -113,6 +127,8 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		
+		
 		
 		<dependency>
 			<groupId>org.vstech.test</groupId>
