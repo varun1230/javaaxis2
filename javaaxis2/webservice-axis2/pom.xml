@@ -26,23 +26,37 @@
   
   	<!-- Axis2 -->
   	<dependency>
-	    <groupId>org.apache.axis2</groupId>
-    	<artifactId>axis2-kernel</artifactId>
-    	<version>${axis.version}</version>
-    	<scope>provided</scope>
-  	</dependency>
-  	<dependency>
-	    <groupId>org.apache.axis2</groupId>
-    	<artifactId>axis2-adb</artifactId>
-    	<version>${axis.version}</version>
-    	<scope>provided</scope>
-    	<exclusions>
-    		<exclusion>
-    			<artifactId>servlet-api</artifactId>
-    			<groupId>javax.servlet</groupId>
-    		</exclusion>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-kernel</artifactId>
+			<version>${axis.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.axis2</groupId>
+	    	<artifactId>axis2-adb</artifactId>
+	    	<version>${axis.version}</version>
+	    	<scope>provided</scope>
+		    	<exclusions>
+	    		<exclusion>
+	    			<artifactId>servlet-api</artifactId>
+	    			<groupId>javax.servlet</groupId>
+	    		</exclusion>
     	</exclusions>
-  	</dependency>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-local</artifactId>
+			<version>${axis.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-http</artifactId>
+			<version>${axis.version}</version>
+			<scope>provided</scope>
+		</dependency>
   
   	<dependency>
 		<groupId>org.apache.axis2</groupId>
@@ -76,6 +90,11 @@
 	</dependency>
 	
   	<!-- logging dependencies -->
+  	<dependency>
+		<artifactId>slf4j-log4j12</artifactId>
+		<groupId>org.slf4j</groupId>
+		<version>${slf4j.version}</version>
+	</dependency>
 	<dependency>
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-api</artifactId>

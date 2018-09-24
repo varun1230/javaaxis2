@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<wsdl:definitions name="AddNumbers"  targetNamespace="http://vstech.org/addNumbers/1.0" xmlns:tns="http://vstech.org/addNumbers/1.0"
+<wsdl:definitions name="WebserviceTest1"  targetNamespace="http://vstech.org/addNumbers/1.0" xmlns:tns="http://vstech.org/addNumbers/1.0"
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 	<wsdl:types>
@@ -59,29 +59,29 @@
             </wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="AddNumbersBinding" type="tns:AddNumbersPortType">
-            <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-            <wsdl:operation name="addNumbers">
-                <soap:operation soapAction="urn:addNumbers" style="document"/>
-                <wsdl:input>
-                    <soap:body use="literal" />
-                </wsdl:input>
-                <wsdl:output>
-                    <soap:body use="literal" />
-                </wsdl:output>
-                <wsdl:fault name="addNumbersFault">
-                    <soap:fault name="addNumbersFault" use="literal" />
-                </wsdl:fault>
-            </wsdl:operation>
-            <wsdl:operation name="oneWayInt">
-                <soap:operation soapAction="urn:oneWayInt" style="document"/>
-                <wsdl:input>
-                    <soap:body use="literal" />
-                </wsdl:input>
-            </wsdl:operation>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <wsdl:operation name="addNumbers">
+            <soap:operation soapAction="urn:addNumbers" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="addNumbersFault">
+                <soap:fault name="addNumbersFault" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="oneWayInt">
+            <soap:operation soapAction="urn:oneWayInt" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+        </wsdl:operation>
 	</wsdl:binding>
-	<wsdl:service name="AddNumbersService">
-            <wsdl:port name="AddNumbersPort" binding="tns:AddNumbersBinding">
-                <soap:address location="http://vstech.org/javaaxis2/services/addNumbers" />
-            </wsdl:port>
+	<wsdl:service name="WebserviceTest1">
+        <wsdl:port name="AddNumbersPort" binding="tns:AddNumbersBinding">
+            <soap:address location="http://vstech.org/javaaxis2/services/WebserviceTest1" />
+        </wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>

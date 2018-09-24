@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<serviceGroup name="AddNumbers">
+<serviceGroup name="WebserviceTest">
   <!-- Invoke SpringInit on server startup and shutdown -->
-  <service name="AddNumbers" class="org.vstech.test.webservice.axis2.spring.SpringInit">
+  <service name="WebserviceTest1" class="org.vstech.test.webservice.axis2.spring.SpringInit">
     <description>
          simple spring example - inside the AAR
     </description>
     <!-- need the TCCL param when using spring inside the AAR -->
     <parameter name="ServiceTCCL">composite</parameter>
-    <parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
-    <parameter name="SpringBeanName">springAwareService</parameter>
+    <parameter name="ServiceObjectSupplier" locked="false">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier</parameter>
+    <parameter name="SpringBeanName"  locked="false">addNumbers</parameter>
+    <parameter name="useOriginalwsdl">true</parameter>
+	<parameter name="modifyUserWSDLPortAddress">true</parameter>
     <operation name="addNumbers">
         <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
     </operation>
