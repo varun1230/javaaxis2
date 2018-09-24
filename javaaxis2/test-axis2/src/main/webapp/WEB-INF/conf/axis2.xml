@@ -28,7 +28,9 @@
 
 
     <parameter name="EnableChildFirstClassLoading">true</parameter>
-	<parameter name="disableAdminSecurity">true</parameter>
+    
+    <!-- To disable the security of axis2 session -->
+	<!-- 	<parameter name="disableAdminSecurity">true</parameter> -->
 	
     <!--Uncomment if you want to enable file caching for attachments -->
     <!--parameter name="cacheAttachments">true</parameter>
