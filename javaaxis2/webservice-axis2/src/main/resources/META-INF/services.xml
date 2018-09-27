@@ -12,8 +12,14 @@
     <parameter name="SpringBeanName"  locked="false">addNumbers</parameter>
     <parameter name="useOriginalwsdl">true</parameter>
 	<parameter name="modifyUserWSDLPortAddress">true</parameter>
-    <operation name="addNumbers">
-        <messageReceiver class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+	
+<!-- 	<messageReceiver mep="w3.org/ns/wsdl/in-only" class="org.apache.axis2.receivers.RawXMLINOnlyMessageReceiver"/>  -->
+	
+<!-- 	<messageReceiver mep="w3.org/ns/wsdl/in-out" class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/> -->
+    
+    <operation name="addNumbers"  namespace="http://vstech.org/addNumbers/1.0" >
+<!--         <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.receivers.RawXMLINOnlyMessageReceiver"/> -->
+        <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
     </operation>
   </service>
 </serviceGroup>
