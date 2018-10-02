@@ -20,7 +20,6 @@
 		</layout>
 	</appender>
 
-	<logger name="gov.mo.courts"><level value="INFO"/></logger>
 
 	<logger name="org.apache.axis2.enterprise"><level value="FATAL"/></logger>
 	<logger name="de.hunsicker.jalopy.io"><level value="FATAL"/></logger>
